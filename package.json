@@ -1,0 +1,15 @@
+{
+  "name": "proffesional-backend",
+  "version": "1.0.0",
+  "description": "backend leanring from youtube",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javscript",
+    "backend"
+  ],
+  "author": "milan",
+  "license": "ISC"
+}
