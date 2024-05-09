@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
       index: true,
     },
-    emial: {
+    email: {
       type: String,
       required: true,
       unique: true,
@@ -51,7 +51,7 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.pre("save", async function (next) {
-  if (!this.isModidied("password")) return next();
+  if (!this.isModified("password")) return next();
   this.password = await bcrypt.hash(this.password, 10);
   next();
 });
@@ -64,7 +64,7 @@ userSchema.methods.generateAccessToken = function () {
   return jwt.sign(
     {
       id: this.id,
-      emial: this.emial,
+      email: this.email,
       username: this.username,
       fullName: this.fullName,
     },
